@@ -1,0 +1,129 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-bg: #f3efe6;
+  --color-surface: #faf7f0;
+  --color-sunken: #e9e3d6;
+  --color-fg: #1c1915;
+  --color-muted: #6b655c;
+  --color-faint: #8a8478;
+  --color-forest: #1e3d36;
+  --color-forest-fg: #f3efe6;
+  --color-primary: #1e3d36;
+  --color-primary-fg: #f3efe6;
+  --color-border: #ddd6c8;
+  --color-border-strong: #c9c0ae;
+  --color-good: #3d6b52;
+  --color-good-bg: #dce8df;
+  --color-warn: #9a7040;
+  --color-warn-bg: #f0e4d0;
+  --color-bad: #9a4a3c;
+  --color-bad-bg: #f0d8d3;
+  --color-info: #3d5360;
+  --color-info-bg: #d7e0e6;
+
+  --font-display: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  --font-sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+
+  --shadow-border: 0 0 0 1px rgb(28 25 21 / 0.06), 0 1px 2px -1px rgb(28 25 21 / 0.06),
+    0 2px 6px rgb(28 25 21 / 0.04);
+  --shadow-border-hover: 0 0 0 1px rgb(28 25 21 / 0.1), 0 2px 8px rgb(28 25 21 / 0.06);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-fg);
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-forest);
+    outline-offset: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.rise-in {
+  animation: rise-in 400ms var(--ease-out) both;
+}
+.rise-in-1 {
+  animation-delay: 40ms;
+}
+.rise-in-2 {
+  animation-delay: 80ms;
+}
+.rise-in-3 {
+  animation-delay: 120ms;
+}
+.rise-in-4 {
+  animation-delay: 160ms;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
