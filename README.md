@@ -1,37 +1,43 @@
-# S.SwiftRoute
+# SwiftRoute — Open Source Last-Mile Logistics Control Room
 
-**Simple name:** SwiftRoute
+**SwiftRoute Control** is an open-source **last-mile ops dashboard** for Indian logistics. Dirty warehouse CSVs, flaky tracking APIs, and driver events go through quality gates into one gold layer leadership can quote.
 
-Last-mile ops dashboard (simulated tracking).
+[![License: MIT](https://img.shields.io/badge/License-MIT-orange.svg)](LICENSE)
 
-This is a Grok App Builder project. The sandbox npm name was `app-builder-workspace`. On GitHub it is **S.SwiftRoute** (private).
+## Features
 
-## Run on this Mac
+- Control-room overview for routes, exceptions, and tickets
+- Medallion-style loads and data quality gates (demo)
+- Simulated live tracking — good for product and ops training
+- Role-aware shell for dispatch and leadership
 
-Need **Node.js 22** and **npm**. Postgres is not required (uses PGLite in the browser/process).
+> Tracking in this repo is **simulated**. Wire a real GPS / courier API before production.
+
+## Who it is for
+
+- 3PL / last-mile startups
+- Founders prototyping a **logistics TMS**
+- Data teams teaching medallion + ops UX
+
+## Quick start
 
 ```bash
-cd "/Users/akshitpareta/Documents/S-projects/S.SwiftRoute"
+git clone https://github.com/Akshit1018/S.SwiftRoute.git
+cd S.SwiftRoute
 npm install
-npm run dev
-```
-
-Open http://127.0.0.1:8080
-
-To skip Grok login in local preview:
-
-```bash
 VITE_AUTH_ENABLED=false npm run dev
 ```
 
-Optional AI (only if this app calls Grok): set `XAI_API_KEY`.
+Open [http://127.0.0.1:8080](http://127.0.0.1:8080).
 
-## Scripts
+## Tech stack
 
-- `npm run dev` — Vite on port 8080
-- `npm run build` — production build + DB migrate (skipped without DATABASE_URL)
-- `npm run typecheck`
+React 19 · TanStack Start · Vite · Tailwind · PGLite
 
-## Notes
+## License
 
-Do not commit `.env`, `node_modules`, or `.grok/`.
+[MIT](LICENSE)
+
+## Keywords
+
+last mile logistics dashboard, TMS open source, delivery tracking control room, Indian logistics software, warehouse CSV ops, dispatch board
